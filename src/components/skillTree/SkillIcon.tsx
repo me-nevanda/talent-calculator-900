@@ -23,8 +23,7 @@ const SkillIcon: React.FC<SkillIconComponentType> = ({id, selected, disabled, on
                 style[selected ? 'selected' : ''],
                 style[disabled ? 'disabled' : '']
             )}
-            role="presentation"
-        >
+            role="presentation">
             <button
                 onContextMenu={onClickHandler}
                 onClick={onClickHandler}

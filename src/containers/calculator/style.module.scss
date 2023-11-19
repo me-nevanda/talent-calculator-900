@@ -20,10 +20,11 @@
 @media only screen and (max-width: 768px) {
   .calculatorSkillsContainer {
     flex-direction: column;
+    width: auto;
   }
 
-  .calculatorSkillsContainer {
-    width: auto
+  .skillsTreesContainer {
+    gap: 30px;
   }
 
   .header {

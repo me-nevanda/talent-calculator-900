@@ -8,9 +8,10 @@ test('SkillLine renders correctly', () => {
     expect(element).toBeInTheDocument();
 });
 
-test('SkillIcon is disabled', async () => {
+test('SkillIcon is disabled', () => {
     render(<SkillLine disabled={true}/>);
     const element = screen.getByRole('presentation');
     expect(element).toHaveClass('disabled');
 });
+
 

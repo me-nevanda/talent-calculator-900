@@ -18,7 +18,7 @@ test('SkillTree renders correctly', () => {
     const element = screen.getByText("skill Tree 1");
     expect(element).toBeInTheDocument();
 });
-test('SkillTree renders correctly 2', () => {
+test('SkillTree renders correctly with skill Icons', () => {
     render(<SkillTree
         onIconClick={jest.fn()}
         id={'sk1'}
