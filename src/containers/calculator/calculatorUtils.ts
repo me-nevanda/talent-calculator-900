@@ -30,8 +30,8 @@ export const canApplyChanges = (points: number, maxPoints: number, skillTrees: S
     if (points === maxPoints && isSelected) return false;
     const {skillTreeIndex, skillIndex, skills} = getSkillsIdentifyData(skillTrees, treeId, skillId);
     if (!canBeUnchecked(skills, skillIndex)) return false;
-    if (skillTrees[skillTreeIndex].skills[skillIndex].selected === isSelected) return false;
-    return true;
+    return skillTrees[skillTreeIndex].skills[skillIndex].selected !== isSelected;
+
 }
 
 const getSkillsIdentifyData = (skillTrees: SkillTreeType[], treeId: string, skillId: string) => {
