@@ -1,0 +1,30 @@
+.pointsContainer {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-top: 40px;
+  font-size: 1.8rem;
+}
+
+.points {
+  color: var(--font-color-secondary);
+}
+
+.info {
+  color: var(--info-color);
+}
+
+@media only screen and (max-width: 768px) {
+  .pointsContainer {
+    width: auto;
+    font-size: 3rem;
+  }
+
+  .points {
+    text-align: center;
+  }
+  .skillLine {
+    width: auto;
+  }
+}
