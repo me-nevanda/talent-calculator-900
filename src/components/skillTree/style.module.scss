@@ -11,6 +11,10 @@
   cursor: pointer;
   border: 0;
   display: block;
+
+  &:hover {
+    background-position-y: 0;
+  }
 }
 
 @for $i from 1 through 8 {
@@ -48,12 +52,16 @@
 .disabled {
   opacity: 0.5;
   cursor: default;
+  &:hover {
+    background-position-y: 50px;
+  }
 }
 
 .skillLine {
   &:last-child {
     display: none;
   }
+
   width: 50px;
   background-color: #303234;
   border-width: 1px 0;
