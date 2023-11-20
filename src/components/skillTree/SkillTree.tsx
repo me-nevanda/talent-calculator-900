@@ -25,7 +25,6 @@ const SkillTree: React.FC<SkillTreeComponentType> = ({name, skills, id, onIconCl
                     </React.Fragment>
                 )}
             </div>
-
         </div>
     );
 }

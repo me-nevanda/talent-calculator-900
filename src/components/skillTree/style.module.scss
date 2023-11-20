@@ -1,6 +1,25 @@
 .skillIconContainer {
-  border: 4px solid var(--border-color);
   z-index: 1;
+  padding: 7px;
+  background-image: url(../../assets/images/unselected.jpg);
+}
+
+.skillIconsContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.skillLine {
+  &:last-child {
+    display: none;
+  }
+  width: 50px;
+  background-color: var(--line-color);
+  border-width: 1px 0;
+  border-style: solid;
+  border-color: var(--border-color);
+  height: 15px;
 }
 
 .skillIcon {
@@ -38,36 +57,22 @@
   gap: 40px;
 }
 
-.skillIconsContainer {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
+
 
 .selected {
   background-position-y: 0;
-  border-color: var(--border-color-selected);
+  background-image: url(../../assets/images/selected.jpg);
+  .skillIcon {
+    background-position-y: 0;
+  }
 }
 
 .disabled {
   opacity: 0.5;
   cursor: default;
-  &:hover {
+  .skillIcon:hover  {
     background-position-y: 50px;
   }
-}
-
-.skillLine {
-  &:last-child {
-    display: none;
-  }
-
-  width: 50px;
-  background-color: #303234;
-  border-width: 1px 0;
-  border-style: solid;
-  border-color: var(--border-color);
-  height: 15px;
 }
 
 @media only screen and (max-width: 768px) {
