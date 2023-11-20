@@ -1,13 +1,19 @@
 import React, {useEffect, useState} from "react";
 import style from "./style.module.scss"
 import {SkillTree} from "components/skillTree";
-import {canApplyChanges, getInitialSkillTreesState, getUpdatedSkillTrees} from "./calculatorUtils";
+import {
+    canApplyChanges,
+    countPoints,
+    getInitialSkillTreesState,
+    getMaxPoints,
+    getUpdatedSkillTrees
+} from "./calculatorUtils";
 import {SkillTreeType} from "components/skillTree/types";
-import {CalculatorComponentType} from "./types";
 import {SkillPoints} from "components/skillPoints";
 
-const Calculator: React.FC<CalculatorComponentType> = ({maxPoints}) => {
-    const [points, setPoints] = useState<number>(0)
+const Calculator: React.FC = () => {
+    const [points, setPoints] = useState<number>(0);
+    const [maxPoints] = useState<number>(getMaxPoints())
     const [skillTrees, setSkillTrees] = useState<SkillTreeType[]>([]);
 
     useEffect(() => {
@@ -17,8 +23,9 @@ const Calculator: React.FC<CalculatorComponentType> = ({maxPoints}) => {
     const onTreeIconClickHandler = (mouseButtonCode: number, skillId: string, treeId: string) => {
         let isSelected = mouseButtonCode === 0; // left click
         if (canApplyChanges(points, maxPoints, skillTrees, isSelected, skillId, treeId)) {
-            setPoints(isSelected ? points + 1 : points - 1);
-            setSkillTrees(getUpdatedSkillTrees(skillTrees, isSelected, skillId, treeId));
+            const updatedSkillTrees = getUpdatedSkillTrees(skillTrees, isSelected, skillId, treeId);
+            setPoints(countPoints(updatedSkillTrees));
+            setSkillTrees(updatedSkillTrees);
         }
     }
 

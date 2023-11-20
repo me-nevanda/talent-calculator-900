@@ -1,5 +1,6 @@
 import {
     canApplyChanges,
+    countPoints,
     getUpdatedSkillTrees,
 } from './calculatorUtils';
 
@@ -100,4 +101,26 @@ test('getUpdatedSkillTrees should update skill trees correctly (remove)', () => 
     expect(updatedSkillTrees[0].skills[1].selected).toBe(false);
     expect(updatedSkillTrees[0].skills[2].selected).toBe(false);
     expect(updatedSkillTrees[0].skills[2].disabled).toBe(true);
+});
+
+test('countPoints should return proper value', () => {
+    const skillTrees = [
+        {
+            id: 'skt1', name: 'TALENT PATH 1', skills: [
+                {id: 'skill1', name: 'skill1', selected: true, disabled: false},
+                {id: 'skill2', name: 'skill2', selected: true, disabled: false},
+                {id: 'skill3', name: 'skill3', selected: false, disabled: false},
+            ]
+        },
+        {
+            id: 'skt2', name: 'TALENT PATH 1', skills: [
+                {id: 'skill1', name: 'skill1', selected: true, disabled: false},
+                {id: 'skill2', name: 'skill2', selected: true, disabled: false},
+                {id: 'skill3', name: 'skill3', selected: true, disabled: false},
+            ]
+        },
+    ];
+
+    const points = countPoints(skillTrees);
+    expect(points).toBe(5);
 });

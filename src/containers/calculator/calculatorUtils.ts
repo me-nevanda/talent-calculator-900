@@ -13,6 +13,8 @@ const initialSkillTreesState: SkillTreeType[] = [
 
 export const getInitialSkillTreesState = () => initialSkillTreesState;
 
+export const getMaxPoints = () => 6;
+
 const getUpdatedSkills = (skills: SkillType[], skillIndex: number, isSelected: boolean) => {
     const result = [...skills]
     result[skillIndex].selected = isSelected;
@@ -41,6 +43,15 @@ export const canApplyChanges = (points: number, maxPoints: number, skillTrees: S
     const {skillTreeIndex, skillIndex, skills} = getSkillsIdentifyData(skillTrees, treeId, skillId);
     if (skills[skillIndex + 1]?.selected) return false;
     return skillTrees[skillTreeIndex].skills[skillIndex].selected !== isSelected;
+}
+
+export const countPoints = (skillTrees: SkillTreeType[]):number => {
+    let result = 0;
+    skillTrees.forEach((skillTree) => {
+        const selectedSkillsCount = skillTree.skills.filter((skill) => skill.selected).length;
+        result += selectedSkillsCount;
+    })
+    return result;
 }
 
 
