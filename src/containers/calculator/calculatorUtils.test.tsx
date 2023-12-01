@@ -8,8 +8,8 @@ test('canApplyChanges should return true for valid changes', () => {
     const skillTrees = [
         {
             id: 'skt1', name: 'TALENT PATH 1', skills: [
-                {id: 'skill1', name: 'skill1', selected: false, disabled: false},
-                {id: 'skill3', name: 'skill3', selected: false, disabled: true},
+                {id: 'skill1', iconClass: 'skill1', name: 'skill1', selected: false, disabled: false},
+                {id: 'skill3', iconClass: 'skill3', name: 'skill3', selected: false, disabled: true},
             ]
         },
     ];
@@ -27,8 +27,8 @@ test('canApplyChanges should return false for valid changes', () => {
     const skillTrees = [
         {
             id: 'skt1', name: 'TALENT PATH 1', skills: [
-                {id: 'skill1', name: 'skill1', selected: false, disabled: false},
-                {id: 'skill3', name: 'skill3', selected: false, disabled: true},
+                {id: 'skill1', iconClass: 'skill1', name: 'skill1', selected: false, disabled: false},
+                {id: 'skill3', iconClass: 'skill3', name: 'skill3', selected: false, disabled: true},
             ]
         },
     ];
@@ -47,8 +47,8 @@ test('canApplyChanges should return false for no changes', () => {
     const skillTrees = [
         {
             id: 'skt1', name: 'TALENT PATH 1', skills: [
-                {id: 'skill1', name: 'skill1', selected: true, disabled: false},
-                {id: 'skill3', name: 'skill3', selected: false, disabled: false},
+                {id: 'skill1', iconClass: 'skill1', name: 'skill1', selected: true, disabled: false},
+                {id: 'skill3', iconClass: 'skill3', name: 'skill3', selected: false, disabled: false},
             ]
         },
     ];
@@ -67,9 +67,9 @@ test('getUpdatedSkillTrees should update skill trees correctly (add)', () => {
     const skillTrees = [
         {
             id: 'skt1', name: 'TALENT PATH 1', skills: [
-                {id: 'skill1', name: 'skill1', selected: true, disabled: false},
-                {id: 'skill2', name: 'skill2', selected: false, disabled: false},
-                {id: 'skill3', name: 'skill3', selected: false, disabled: true},
+                {id: 'skill1', iconClass: 'skill1', name: 'skill1', selected: true, disabled: false},
+                {id: 'skill2', iconClass: 'skill2', name: 'skill2', selected: false, disabled: false},
+                {id: 'skill3', iconClass: 'skill3', name: 'skill3', selected: false, disabled: true},
             ]
         },
     ];
@@ -87,9 +87,9 @@ test('getUpdatedSkillTrees should update skill trees correctly (remove)', () => 
     const skillTrees = [
         {
             id: 'skt1', name: 'TALENT PATH 1', skills: [
-                {id: 'skill1', name: 'skill1', selected: true, disabled: false},
-                {id: 'skill2', name: 'skill2', selected: true, disabled: false},
-                {id: 'skill3', name: 'skill3', selected: false, disabled: false},
+                {id: 'skill1', iconClass: 'skill1', name: 'skill1', selected: true, disabled: false},
+                {id: 'skill2', iconClass: 'skill2', name: 'skill2', selected: true, disabled: false},
+                {id: 'skill3', iconClass: 'skill1', name: 'skill3', selected: false, disabled: false},
             ]
         },
     ];
@@ -107,16 +107,16 @@ test('countPoints should return proper value', () => {
     const skillTrees = [
         {
             id: 'skt1', name: 'TALENT PATH 1', skills: [
-                {id: 'skill1', name: 'skill1', selected: true, disabled: false},
-                {id: 'skill2', name: 'skill2', selected: true, disabled: false},
-                {id: 'skill3', name: 'skill3', selected: false, disabled: false},
+                {id: 'skill1', iconClass: 'skill1', name: 'skill1', selected: true, disabled: false},
+                {id: 'skill2', iconClass: 'skill2', name: 'skill2', selected: true, disabled: false},
+                {id: 'skill3', iconClass: 'skill3', name: 'skill3', selected: false, disabled: false},
             ]
         },
         {
             id: 'skt2', name: 'TALENT PATH 1', skills: [
-                {id: 'skill1', name: 'skill1', selected: true, disabled: false},
-                {id: 'skill2', name: 'skill2', selected: true, disabled: false},
-                {id: 'skill3', name: 'skill3', selected: true, disabled: false},
+                {id: 'skill1', iconClass: 'skill1', name: 'skill1', selected: true, disabled: false},
+                {id: 'skill2', iconClass: 'skill2', name: 'skill2', selected: true, disabled: false},
+                {id: 'skill3', iconClass: 'skill3', name: 'skill3', selected: true, disabled: false},
             ]
         },
     ];

@@ -2,7 +2,7 @@ import {SkillTreeType, SkillType} from "components/skillTree/types";
 
 const getSkillObjects = (...skills: string[]): SkillType[] => {
     return skills.map((skill, index) => {
-        return {id: skill, name: skill, selected: false, disabled: index !== 0}
+        return {id: skill + index, iconClass: skill, name: skill, selected: false, disabled: index !== 0}
     })
 }
 

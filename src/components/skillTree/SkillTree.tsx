@@ -18,6 +18,7 @@ const SkillTree: React.FC<SkillTreeComponentType> = ({name, skills, id, onIconCl
                         <SkillIcon
                             onClick={onClickIconHandler}
                             id={skill.id}
+                            iconClass={skill.iconClass}
                             disabled={skill.disabled}
                             selected={skill.selected}
                         />

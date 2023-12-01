@@ -3,7 +3,7 @@ import style from "./style.module.scss"
 import {SkillIconComponentType} from "./types";
 import cx from 'classnames';
 
-const SkillIcon: React.FC<SkillIconComponentType> = ({id, selected, disabled, onClick}) => {
+const SkillIcon: React.FC<SkillIconComponentType> = ({id, iconClass, selected, disabled, onClick}) => {
     const onClickHandler = (event: React.MouseEvent<HTMLElement>) => {
         event.preventDefault();
         const isCorrectButtonType = event.button === 0 || event.button === 2;
@@ -30,7 +30,7 @@ const SkillIcon: React.FC<SkillIconComponentType> = ({id, selected, disabled, on
                 onTouchEnd={onTouchHandler}
                 className={cx(
                     style.skillIcon,
-                    style[id],
+                    style[iconClass],
                     style[disabled ? 'disabled' : '']
                 )}
                 aria-label={id}

@@ -3,9 +3,9 @@ import {render, screen} from '@testing-library/react';
 import SkillTree from './SkillTree';
 
 const skills = [
-    {id: 'skill1', name: 'skill1', selected: false, disabled: false},
-    {id: 'skill2', name: 'skill2', selected: false, disabled: false},
-    {id: 'skill3', name: 'skill3', selected: false, disabled: false}
+    {id: 'skill1', iconClass: 'skill1', name: 'skill1', selected: false, disabled: false},
+    {id: 'skill2', iconClass: 'skill2', name: 'skill2', selected: false, disabled: false},
+    {id: 'skill3', iconClass: 'skill3', name: 'skill3', selected: false, disabled: false}
 ];
 
 test('SkillTree renders correctly', () => {

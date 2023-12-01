@@ -13,6 +13,7 @@ export interface SkillIconComponentType {
     id: string;
     selected: boolean;
     disabled: boolean;
+    iconClass: string;
     onClick: (buttonClicked: number, skillId: string) => void;
 }
 
@@ -26,6 +27,7 @@ export interface SkillType {
     id: string;
     selected: boolean;
     disabled: boolean;
+    iconClass: string;
 }
 
 
